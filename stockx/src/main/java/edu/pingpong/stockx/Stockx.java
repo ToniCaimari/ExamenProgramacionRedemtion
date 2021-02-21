@@ -12,6 +12,7 @@ import edu.pingpong.stockx.item.Sneaker;
 import edu.pingpong.stockx.criteria.Asks;
 import edu.pingpong.stockx.criteria.Bids;
 import edu.pingpong.stockx.criteria.MaxBid;
+import edu.pingpong.stockx.criteria.MinAsk;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo las cosas a la manera
@@ -102,11 +103,12 @@ public class Stockx {
                  * 
                  * Guarda esta ask minima en la propiedad ask de sneaker.
                  */
-                /**
-                 * Criteria minAsk = new MinAsk(); List<Offer> minimum =
-                 * minAsk.checkCriteria(sneaker); sneaker.setAsk(minimum.isEmpty()? 0 :
-                 * minimum.get(0).value()); System.out.println(Stockx.draw(sneaker));
-                 */
+
+                Criteria minAsk = new MinAsk();
+                List<Offer> minimum = minAsk.checkCriteria(sneaker);
+                sneaker.setAsk(minimum.isEmpty() ? 0 : minimum.get(0).value());
+                System.out.println(Stockx.draw(sneaker));
+
                 /**
                  * Añade ventas (sales) de una zapatilla a sus offers. Las ventas se añaden
                  * segun fecha en la que se producen, de mas antigua a mas reciente.

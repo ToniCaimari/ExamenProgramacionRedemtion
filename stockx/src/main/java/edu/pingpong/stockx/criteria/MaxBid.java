@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class MaxBid implements Criteria {
-    private static List<Offer> maxBid = new ArrayList<>();
+    private List<Offer> maxBid = new ArrayList<>();
     Criteria bids = new Bids();
 
     public MaxBid() {
