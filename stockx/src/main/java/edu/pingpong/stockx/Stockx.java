@@ -3,6 +3,7 @@ package edu.pingpong.stockx;
 import java.util.List;
 
 import edu.pingpong.stockx.criteria.Criteria;
+import edu.pingpong.stockx.criteria.LastSale;
 import edu.pingpong.stockx.item.Ask;
 import edu.pingpong.stockx.item.Bid;
 import edu.pingpong.stockx.item.Item;
@@ -135,13 +136,13 @@ public class Stockx {
                  * Crea un filtro que devuelva la ULTIMA de las ventas (que es la ultima en ser
                  * incluida en sneaker).
                  */
-                /**
-                 * Criteria lastSale = new LastSale();
-                 * 
-                 * List<Offer> actualSale = lastSale.checkCriteria(sneaker);
-                 * sneaker.setSale(actualSale.isEmpty()? 0 : actualSale.get(0).value());
-                 * System.out.println(Stockx.draw(sneaker));
-                 */
+
+                Criteria lastSale = new LastSale();
+
+                List<Offer> actualSale = lastSale.checkCriteria(sneaker);
+                sneaker.setSale(actualSale.isEmpty() ? 0 : actualSale.get(0).value());
+                System.out.println(Stockx.draw(sneaker));
+
                 /**
                  * Mostrar info de la zapatilla en la talla 9.5
                  */
