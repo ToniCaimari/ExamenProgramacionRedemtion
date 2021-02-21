@@ -13,6 +13,7 @@ import edu.pingpong.stockx.criteria.Asks;
 import edu.pingpong.stockx.criteria.Bids;
 import edu.pingpong.stockx.criteria.MaxBid;
 import edu.pingpong.stockx.criteria.MinAsk;
+import edu.pingpong.stockx.criteria.Sales;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo las cosas a la manera
@@ -125,10 +126,11 @@ public class Stockx {
                  * Crear el filtro "Sales" que filtra solo las ventas /sales de entre las offers
                  * de la zapatilla.
                  */
-                /**
-                 * Criteria sales = new Sales(); System.out.println("\n\t\t All SALES");
-                 * sales.checkCriteria(sneaker).forEach(System.out::print);
-                 */
+
+                Criteria sales = new Sales();
+                System.out.println("\n\t\t All SALES");
+                sales.checkCriteria(sneaker).forEach(System.out::print);
+
                 /**
                  * Crea un filtro que devuelva la ULTIMA de las ventas (que es la ultima en ser
                  * incluida en sneaker).

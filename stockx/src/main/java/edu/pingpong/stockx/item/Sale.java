@@ -16,14 +16,16 @@ public class Sale implements Offer {
     public int value() {
         return this.ask;
     }
+
     /**
      * public int compareTo(Offer offer){
      * 
      * }
      */
-    /**
-     * @Override public String toString(){ System.out.println(); }
-     */
+    @Override
+    public String toString() {
+        return "\n\t\t" + size() + "\t\t" + Integer.toString(value());
+    }
     // @Override
     // public int compareTo(Offer offer) {
     // // TODO Auto-generated method stub
