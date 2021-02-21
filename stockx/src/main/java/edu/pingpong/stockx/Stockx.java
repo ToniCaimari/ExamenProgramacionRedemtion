@@ -15,6 +15,7 @@ import edu.pingpong.stockx.criteria.Bids;
 import edu.pingpong.stockx.criteria.MaxBid;
 import edu.pingpong.stockx.criteria.MinAsk;
 import edu.pingpong.stockx.criteria.Sales;
+import edu.pingpong.stockx.criteria.Size;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo las cosas a la manera
@@ -154,17 +155,18 @@ public class Stockx {
                  * 
                  * Crea un filtro AndCriteria() que haga un AND de los filtros Size y Sales.
                  */
-                /**
-                 * System.out.println("\n\t\t SALES 9.5 US"); Criteria size = new Size("9.5");
-                 * 
-                 * sales = new Sales(); Criteria andSizeSales = new AndCriteria(size, sales);
-                 * andSizeSales.checkCriteria(sneaker).forEach(System.out::print);
-                 * 
-                 * List<Offer> sizeSales = andSizeSales.checkCriteria(sneaker);
-                 * sneaker.setSale(sizeSales.isEmpty()? 0 : sizeSales.get(sizeSales.size()
-                 * -1).value()); System.out.println("\n\t\t LAST SALE 9.5 US: " +
-                 * sneaker.getSale());
-                 */
+
+                System.out.println("\n\t\t SALES 9.5 US");
+                Criteria size = new Size("9.5");
+
+                sales = new Sales();
+                Criteria andSizeSales = new AndCriteria(size, sales);
+                andSizeSales.checkCriteria(sneaker).forEach(System.out::print);
+
+                List<Offer> sizeSales = andSizeSales.checkCriteria(sneaker);
+                sneaker.setSale(sizeSales.isEmpty() ? 0 : sizeSales.get(sizeSales.size() - 1).value());
+                System.out.println("\n\t\t LAST SALE 9.5 US: " + sneaker.getSale());
+
                 /**
                  * Reutiliza el filtro AndCriteria para filtrar las bids de la talla 9.5
                  */
