@@ -3,7 +3,7 @@ package edu.pingpong.stockx.item;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sneaker implements Item, Offer {
+public class Sneaker implements Item {
     private String style = "";
     private String name = "";
     private int sale = 0;
@@ -61,19 +61,7 @@ public class Sneaker implements Item, Offer {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return getName() + "\n" + "                " + getStyle();
-    }
-
-    @Override
-    public String size() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public int value() {
-        // TODO Auto-generated method stub
-        return 0;
+        return "\n\t" + getName() + "\n\t\t" + getStyle();
     }
 
     // @Override
