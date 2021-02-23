@@ -25,7 +25,8 @@ public class AndCriteria implements Criteria {
         andCriteria = firstCriteria.stream()
                 .filter(x -> (secondCriteria.stream().filter(n -> n.equals(x)).count()) >= 1)
                 .collect(Collectors.toList()); // código copiado a Carlos Franco intentando entender (de momento no lo
-                                               // entiendo del todo)
+                                               // entiendo del todo) --> hacemos un stream de first criteria (size) 
+                                               // y filtramos los resultados que coincidan con los resultados del stream de second-criteria
 
         return andCriteria;
     }

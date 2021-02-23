@@ -1,7 +1,8 @@
 package edu.pingpong.stockx;
 
 import java.util.List;
-
+import edu.pingpong.stockx.criteria.Min;
+import edu.pingpong.stockx.criteria.Max;
 import edu.pingpong.stockx.criteria.Criteria;
 import edu.pingpong.stockx.criteria.LastSale;
 import edu.pingpong.stockx.item.Ask;
@@ -181,28 +182,28 @@ public class Stockx {
                  * Crea un filtro Max(size, bids) que devuelva el maximo de las bids de una
                  * talla.
                  */
-                /**
-                 * Criteria sizeMaxBid = new Max(size, bids); List<Offer> sizeBid =
-                 * sizeMaxBid.checkCriteria(sneaker); sneaker.setBid(sizeBid.isEmpty()? 0 :
-                 * sizeBid.get(0).value()); System.out.println("\n\t\t MAX BID 9.5 US: " +
-                 * sneaker.getBid());
-                 */
+                
+                Criteria sizeMaxBid = new Max(size, bids); List<Offer> sizeBid =
+                sizeMaxBid.checkCriteria(sneaker); sneaker.setBid(sizeBid.isEmpty()? 0 :
+                sizeBid.get(0).value()); System.out.println("\n\t\t MAX BID 9.5 US: " +
+                sneaker.getBid());
+                
                 /**
                  * Crea un filtro Min(size, asks) que devuelva el minimo de las asks de una
                  * talla.
                  */
-                /**
-                 * Criteria sizeMinAsk = new Min(size, asks); List<Offer> sizeAsk =
-                 * sizeMinAsk.checkCriteria(sneaker); sneaker.setAsk(sizeAsk.isEmpty()? 0 :
-                 * sizeAsk.get(0).value()); System.out.println("\n\t\t MIN ASK 9.5 US: " +
-                 * sneaker.getAsk());
-                 */
+                
+                Criteria sizeMinAsk = new Min(size, asks); List<Offer> sizeAsk =
+                sizeMinAsk.checkCriteria(sneaker); sneaker.setAsk(sizeAsk.isEmpty()? 0 :
+                sizeAsk.get(0).value()); System.out.println("\n\t\t MIN ASK 9.5 US: " +
+                sneaker.getAsk());
+                
                 /**
                  * Mostrar info de la zapatilla en la talla 9.5 - ultima venta - minima ask -
                  * maxima bid
                  */
 
-                // System.out.println(Stockx.draw(sneaker));
+                System.out.println(Stockx.draw(sneaker));
 
                 // mostrar las listas ordenadas
 
