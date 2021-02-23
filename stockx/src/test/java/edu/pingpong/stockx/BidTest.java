@@ -11,6 +11,6 @@ public class BidTest {
     @Test
     public void toStringTest() {
         Bid bid = new Bid("Talla", 200);
-        assertEquals("\n\t\t" + "Size" + "\t\t" + "200", bid.toString());
+        assertEquals("\n\t\t" + "Talla" + "\t\t" + "200", bid.toString());
     }
 }
