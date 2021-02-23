@@ -10,6 +10,7 @@ import edu.pingpong.stockx.item.Item;
 import edu.pingpong.stockx.item.Offer;
 import edu.pingpong.stockx.item.Sale;
 import edu.pingpong.stockx.item.Sneaker;
+import edu.pingpong.stockx.criteria.AndCriteria;
 import edu.pingpong.stockx.criteria.Asks;
 import edu.pingpong.stockx.criteria.Bids;
 import edu.pingpong.stockx.criteria.MaxBid;
@@ -170,11 +171,12 @@ public class Stockx {
                 /**
                  * Reutiliza el filtro AndCriteria para filtrar las bids de la talla 9.5
                  */
-                /**
-                 * System.out.println("\n\t\t BIDS 9.5 US"); bids = new Bids(); Criteria
-                 * andSizeBids = new AndCriteria(size, bids);
-                 * andSizeBids.checkCriteria(sneaker).forEach(System.out::print);
-                 */
+
+                System.out.println("\n\t\t BIDS 9.5 US");
+                bids = new Bids();
+                Criteria andSizeBids = new AndCriteria(size, bids);
+                andSizeBids.checkCriteria(sneaker).forEach(System.out::print);
+
                 /**
                  * Crea un filtro Max(size, bids) que devuelva el maximo de las bids de una
                  * talla.
