@@ -2,7 +2,6 @@ package edu.pingpong.stockx;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import edu.pingpong.stockx.item.Ask;
