@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import edu.pingpong.stockx.criteria.Bids;
+import edu.pingpong.stockx.criteria.Sales;
 import edu.pingpong.stockx.criteria.Criteria;
 import edu.pingpong.stockx.item.Ask;
 import edu.pingpong.stockx.item.Bid;
@@ -14,30 +14,31 @@ import edu.pingpong.stockx.item.Item;
 import edu.pingpong.stockx.item.Sale;
 import edu.pingpong.stockx.item.Sneaker;
 
-public class BidsTest {
+public class SalesTest {
     @Test
-    public void BidsCriteriaTest() {
-        Criteria bids = new Bids();
+    public void nonEmptySalesCriteriaTest() {
+        Criteria sales = new Sales();
+        Item sneaker = new Sneaker("Estilo", "Nombre");
+        sneaker.add(new Bid("7.5", 555));
+        sneaker.add(new Ask("6", 65));
+        sneaker.add(new Sale("8", 15));
+
+        sales.checkCriteria(sneaker);
+
+        assertNotNull(sales.checkCriteria(sneaker));
+        assertFalse(sales.checkCriteria(sneaker).isEmpty());
+    }
+
+    @Test
+    public void emptySalesCriteriaTest() {
+        Criteria sales = new Sales();
         Item sneaker = new Sneaker("Estilo", "Nombre");
         sneaker.add(new Bid("7.5", 555));
         sneaker.add(new Ask("6", 65));
 
-        bids.checkCriteria(sneaker);
+        sales.checkCriteria(sneaker);
 
-        assertNotNull(bids.checkCriteria(sneaker));
-        assertFalse(bids.checkCriteria(sneaker).isEmpty());
-    }
-
-    @Test
-    public void emptyBidsCriteriaTest() {
-        Criteria bids = new Bids();
-        Item sneaker = new Sneaker("Estilo", "Nombre");
-        sneaker.add(new Sale("7.5", 555));
-        sneaker.add(new Ask("6", 65));
-
-        bids.checkCriteria(sneaker);
-
-        assertTrue(bids.checkCriteria(sneaker).isEmpty());
+        assertTrue(sales.checkCriteria(sneaker).isEmpty());
     }
 
 }
