@@ -8,7 +8,6 @@ import edu.pingpong.stockx.item.Item;
 import edu.pingpong.stockx.item.Offer;
 
 public class AndCriteria implements Criteria {
-    private List<Offer> newCriteria = new ArrayList<>();
     private Criteria criteria;
     private Criteria otherCriteria;
 
