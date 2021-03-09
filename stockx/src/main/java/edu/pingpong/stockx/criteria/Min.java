@@ -20,7 +20,7 @@ public class Min implements Criteria{
 public List<Offer> checkCriteria(Item sneaker){
     Criteria newCriteria= new AndCriteria(criteria, otherCriteria);
     List<Offer> newCriteriaList= newCriteria.checkCriteria(sneaker);
-    Offer minOffer= newCriteriaList.stream().max(Comparator.comparing(a->a.value())).orElse(null);
+    Offer minOffer= newCriteriaList.stream().min(Comparator.comparing(a->a.value())).orElse(null);
     min.add(minOffer);
     return min;
     
